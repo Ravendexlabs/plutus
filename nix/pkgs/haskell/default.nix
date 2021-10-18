@@ -1,6 +1,5 @@
 { lib
 , sources
-, agdaWithStdlib
 , stdenv
 , haskell-nix
 , buildPackages
@@ -12,7 +11,6 @@
 , rPackages
 , z3
 , enableHaskellProfiling
-, actus-tests
 }:
 let
   # The Hackage index-state from cabal.project
@@ -39,10 +37,9 @@ let
     { deferPluginErrors }:
     import ./haskell.nix {
       inherit lib haskell-nix R libsodium-vrf rPackages z3;
-      inherit agdaWithStdlib checkMaterialization compiler-nix-name gitignore-nix;
+      inherit checkMaterialization compiler-nix-name gitignore-nix;
       inherit enableHaskellProfiling;
       inherit deferPluginErrors;
-      inherit actus-tests;
     };
   project = baseProject { deferPluginErrors = false; };
   # The same as above, but this time with we defer plugin errors so that we
