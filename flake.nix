@@ -57,6 +57,14 @@
       url = "github:tweag/npmlock2nix";
       flake = false;
     };
+    plutus-core = {
+      url = "github:input-output-hk/plutus?rev=341c0cb4232f5b1dfcd4e40c317b4e26ea7ac610";
+      flake = false;
+    };
+    plutus-apps = {
+      url = "github:input-output-hk/plutus?rev=0d966207d345f6e83f36af0a287f459a00261c2d"; # TODO plutus-apps once public
+      flake = false;
+    };
     pre-commit-hooks-nix = {
       url = "github:cachix/pre-commit-hooks.nix";
       flake = false;

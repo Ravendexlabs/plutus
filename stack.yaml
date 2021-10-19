@@ -2,30 +2,11 @@ resolver: lts-17.14
 
 packages:
 - doc
-- freer-extras
 - marlowe
 - marlowe-dashboard-server
 - marlowe-actus
 - marlowe-playground-server
 - marlowe-symbolic
-- playground-common
-- plutus-benchmark
-- plutus-chain-index
-- plutus-contract
-- plutus-core
-- plutus-errors
-- plutus-ledger
-- plutus-ledger-api
-- plutus-metatheory
-- plutus-pab
-- plutus-playground-server
-- plutus-tx
-- plutus-tx-plugin
-- plutus-use-cases
-- prettyprinter-configurable
-- quickcheck-dynamic
-- web-ghc
-- word-array
 
 extra-deps:
 # Flat compression
@@ -162,6 +143,28 @@ extra-deps:
   commit: edf6945007177a638fbeb8802397f3a6f4e47c14
 - git: https://github.com/input-output-hk/goblins
   commit: cde90a2b27f79187ca8310b6549331e59595e7ba
+- git: https://github.com/input-output-hk/plutus
+  commit: 341c0cb4232f5b1dfcd4e40c317b4e26ea7ac610
+  subdirs:
+    - plutus-core
+    - plutus-ledger-api
+    - plutus-tx
+    - plutus-tx-plugin
+    - word-array
+    - prettyprinter-configurable
+    - stubs/plutus-ghc-stub
+- git: https://github.com/input-output-hk/plutus # TODO plutus-apps once public
+  commit: f66f829e4f07e6f1d3fe82a739ac88740ce8ffa5
+  subdirs:
+    - freer-extras
+    - playground-common
+    - plutus-chain-index
+    - plutus-contract
+    - plutus-ledger
+    - plutus-pab
+    - plutus-use-cases
+    - quickcheck-dynamic
+    - web-ghc
 
 allow-newer: true
 
