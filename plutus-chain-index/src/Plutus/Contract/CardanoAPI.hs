@@ -374,7 +374,7 @@ fromCardanoTxOutValue (C.TxOutValue _ value)      = fromCardanoValue value
 
 toCardanoTxOutValue :: P.Value -> Either ToCardanoError (C.TxOutValue C.AlonzoEra)
 toCardanoTxOutValue value = do
-    -- when (Ada.fromValue value == mempty) (Left OutputHasZeroAda)
+    when (Ada.fromValue value == mempty) (Left OutputHasZeroAda)
     C.TxOutValue C.MultiAssetInAlonzoEra <$> toCardanoValue value
 
 fromCardanoTxOutDatumHash :: C.TxOutDatumHash era -> Maybe P.DatumHash
